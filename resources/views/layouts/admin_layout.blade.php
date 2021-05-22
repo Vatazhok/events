@@ -256,13 +256,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link ">
-                                    <p>Всі Категорії</p>
+                                <a href="{{route('category.index')}}" class="nav-link ">
+                                    <p>Всі категорії</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link ">
-                                    <p>Добавити Категорію</p>
+                                <a href="{{route('category.create')}}" class="nav-link ">
+                                    <p>Добавити категорію</p>
                                 </a>
                             </li>
                         </ul>
