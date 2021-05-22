@@ -14,8 +14,8 @@
                 @foreach($posts as $post)
                     <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
                         <div class="card">
-                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                <img src="{{$post->cover}}" class="img-fluid"/>
+                            <div class="bg-image hover-overlay ripple text-center" data-mdb-ripple-color="light">
+                                <img src="{{$post->cover}}" class="img-fluid "/>
                                 <a href="{{route('getPost',[$post->category['slug'], $post->slug])}}">
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                 </a>

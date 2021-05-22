@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\EventController::class, 'index']);
 Route::get('/category/{slug}', [\App\Http\Controllers\EventController::class, 'getPostsByCategory'])->name('getPostsByCategory');
 Route::get('/category/{slug_category}/{slug_post}', [\App\Http\Controllers\EventController::class, 'getPost'])->name('getPost');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+Route::group(['middleware' => ['role:admin']], function () {
+    Route::get('/test', function (){
+       return view('test');
+    });
+});
