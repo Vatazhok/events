@@ -1,5 +1,5 @@
 @extends('layouts.admin_layout')
-@section('title','Добавити пост')
+@section('title','Редагувати пост')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Добавить сатью</h1>
+                    <h1 class="m-0">Редагувати пост: {{$post->title}}</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
             @if (session('success'))
@@ -27,42 +27,43 @@
                 <div class="col-lg-12">
                     <div class="card card-primary">
                         <!-- form start -->
-                        <form action="{{ route('post.store') }}" method="POST">
+                        <form action="{{ route('post.update', $post->id) }}" method="POST">
                             @csrf
+                            @method('PUT')
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Назва</label>
-                                    <input type="text" name="title" class="form-control" id="exampleInputEmail1"
+                                    <input type="text" value="{{$post->title}}" name="title" class="form-control" id="exampleInputEmail1"
                                            placeholder="Введите название статьи" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Назва(трансліт)</label>
-                                    <input type="text" name="slug" class="form-control" id="exampleInputEmail1"
+                                    <input type="text" value="{{$post->slug}}" name="slug" class="form-control" id="exampleInputEmail1"
                                            placeholder="Введите название статьи" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Дата</label>
-                                    <input type="text" name="date" class="form-control" id="exampleInputEmail1"
+                                    <input type="text" value="{{$post->date}}" name="date" class="form-control" id="exampleInputEmail1"
                                            placeholder="Введите название статьи" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Час</label>
-                                    <input type="text" name="time" class="form-control" id="exampleInputEmail1"
+                                    <input type="text" value="{{$post->time}}" name="time" class="form-control" id="exampleInputEmail1"
                                            placeholder="Введите название статьи" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Місце проведення</label>
-                                    <input type="text" name="venue" class="form-control" id="exampleInputEmail1"
+                                    <input type="text" value="{{$post->venue}}" name="venue" class="form-control" id="exampleInputEmail1"
                                            placeholder="Введите название статьи" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Населений пункт, де проходитиме подія</label>
-                                    <input type="text" name="settlement" class="form-control" id="exampleInputEmail1"
+                                    <input type="text" value="{{$post->settlement}}" name="settlement" class="form-control" id="exampleInputEmail1"
                                            placeholder="Введите название статьи" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Ціна</label>
-                                    <input type="text" name="price" class="form-control" id="exampleInputEmail1"
+                                    <input type="text" value="{{$post->price}}" name="price" class="form-control" id="exampleInputEmail1"
                                            placeholder="Введите название статьи" required>
                                 </div>
 
@@ -72,33 +73,33 @@
                                         <label>Выберите категорию</label>
                                         <select name="category_id" class="form-control" required>
                                             @foreach ($categories as $category)
-                                                <option value="{{ $category['id'] }}">{{ $category['title'] }}</option>
+                                                <option value="{{ $category['id'] }}" @if($category['id']==$post['category_id']) selected @endif>{{ $category['title'] }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <textarea name="text" class="editor"></textarea>
+                                    <textarea name="text" class="editor">{{$post->text}}</textarea>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="feature_image">Изображение статьи</label>
-                                    <img src="" alt="" class="img-uploaded" style="display: block; width: 300px">
-                                    <input type="text" name="cover" class="form-control" id="feature_image"
+                                    <img src="{{$post->cover}}" alt="" class="img-uploaded" style="display: block; width: 300px">
+                                    <input type="text" value="{{$post->cover}}" name="cover" class="form-control" id="feature_image"
                                            name="feature_image" value="" readonly>
                                     <a href="" class="popup_selector" data-inputid="feature_image">Выбрать изображение</a>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Публікація?</label>
-                                    <input type="text" name="is_published" class="form-control" id="exampleInputEmail1"
+                                    <input type="text" value="{{$post->is_published}}" name="is_published" class="form-control" id="exampleInputEmail1"
                                            placeholder="Введите название статьи" required>
                                 </div>
                             </div>
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Добавить</button>
+                                <button type="submit" class="btn btn-primary">Зберегти зміни</button>
                             </div>
 
                         </form>
@@ -110,3 +111,4 @@
 
 
 @endsection
+

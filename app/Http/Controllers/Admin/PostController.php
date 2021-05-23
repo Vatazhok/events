@@ -12,11 +12,17 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $posts = Post::orderBy('created_at', 'DESC')->get();
+        return view(
+            'admin.post.index',
+            [
+                'posts' => $posts
+            ]
+        );
     }
 
     /**
@@ -75,11 +81,18 @@ class PostController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param \App\Models\Post $post
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(Post $post)
     {
-        //
+        $categories = Category::all();
+        return view(
+            'admin.post.edit',
+            [
+                'categories' => $categories,
+                'post' => $post,
+            ]
+        );
     }
 
     /**
@@ -91,7 +104,20 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $post->title = $request->title;
+        $post->category_id = $request->category_id;
+        $post->slug = $request->slug;
+        $post->cover = $request->cover;
+        $post->text = $request->text;
+        $post->date = $request->date;
+        $post->time = $request->time;
+        $post->venue = $request->venue;
+        $post->price = $request->price;
+        $post->settlement = $request->settlement;
+        $post->is_published = $request->is_published;
+        $post->save();
+
+        return redirect()->back()->withSuccess('Пост оновлено');
     }
 
     /**
@@ -102,6 +128,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->back()->withSuccess('Пост успішно видалено');
     }
 }

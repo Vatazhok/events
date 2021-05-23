@@ -17,6 +17,8 @@ $(document).ready(function () {
     });
 })
 
+
+
 tinymce.init({
     selector: '.editor',
     plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
