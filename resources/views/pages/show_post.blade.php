@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-xl-12  mb-4">
                     <article>
-{!! $post->content !!}
+{!! $post->text !!}
                     </article>
                 </div>
 

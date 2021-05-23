@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,4 +28,5 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group( function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('homeAdmin');
 
     Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
+    Route::resource('post', \App\Http\Controllers\Admin\PostController::class);
 });

@@ -177,6 +177,7 @@ return [
 
 
         Spatie\Permission\PermissionServiceProvider::class,
+        Barryvdh\Elfinder\ElfinderServiceProvider::class
 
     ],
 
