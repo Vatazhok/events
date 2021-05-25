@@ -11,12 +11,12 @@ class EventController extends Controller
     public function index()
     {
         //$categories = Category::orderBy('title')->get();
-        $posts = Post::paginate(8);
+        $posts = Post::where('is_published',1)->paginate(8);
         return view(
             'pages.index',
             [
                 'posts' => $posts,
-            //    'categories' => $categories,
+                //    'categories' => $categories,
             ]
 
         );
@@ -29,19 +29,22 @@ class EventController extends Controller
         return view(
             'pages.index',
             [
-                'posts' => $currentCategory->posts()->paginate(8),
-            //    'categories' => $categories,
+                'posts' => $currentCategory->posts()->where('is_published',1)->paginate(8),
+                //    'categories' => $categories,
             ]
 
         );
     }
 
-    public function getPost($slug_category,$slug_post){
-    $post=Post::where('slug',$slug_post)->first();
+    public function getPost($slug_category, $slug_post)
+    {
+        $post = Post::where('slug', $slug_post)->first();
 
-    return view('pages.show_post',[
-        'post'=> $post
-    ]);
-
+        return view(
+            'pages.show_post',
+            [
+                'post' => $post
+            ]
+        );
     }
 }

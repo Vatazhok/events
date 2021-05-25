@@ -24,7 +24,6 @@
 <body>
 
 
-
 <header>
     <!-- Navbar -->
     {{--<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#a41559;">--}}
@@ -37,7 +36,8 @@
 
             <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
                     aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
@@ -78,41 +78,55 @@
 
                 <!-- Icons -->
                 <ul class="navbar-nav d-flex flex-row me-1">
+
                     <li class="nav-item me-3 me-lg-0">
-                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
-                    </li>
-                    <li class="nav-item me-3 me-lg-0">
-                        <a class="nav-link" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="nav-link" href="#"><i class="fas fa-heart"></i></a>
                     </li>
                     <!-- Avatar -->
                     <li class="nav-item dropdown">
                         <a
-                            class="nav-link dropdown-toggle d-flex align-items-center"
+                            class="nav-link dropdown-toggle  align-items-center"
                             href="#"
                             id="navbarDropdownMenuLink"
                             role="button"
                             data-mdb-toggle="dropdown"
                             aria-expanded="false"
-                        >
-                            <img
-                                src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
-                                class="rounded-circle"
-                                height="22"
-                                alt=""
-                                loading="lazy"
-                            />
+                        ><i class="fas fa-user"></i>
+                            {{--                            <img--}}
+                            {{--                                src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"--}}
+                            {{--                                class="rounded-circle"--}}
+                            {{--                                height="22"--}}
+                            {{--                                alt=""--}}
+                            {{--                                loading="lazy"--}}
+                            {{--                            />--}}
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li>
-                                <a class="dropdown-item" href="#">My profile</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Settings</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Logout</a>
-                            </li>
-                        </ul>
+                        @guest
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Увійти</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Зареєструватися</a>
+                                </li>
+                            </ul>
+                        @endguest
+                        @auth
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                @role('admin')
+                                <li>
+                                    <a class="dropdown-item" href="#">Адмін панель</a>
+                                </li>
+                                @endrole
+                                <li>
+                                    <a class="dropdown-item" href="#">Профіль</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Вихід</a>
+                                </li>
+                            </ul>
+                        @endauth
+
+
                     </li>
                 </ul>
 
