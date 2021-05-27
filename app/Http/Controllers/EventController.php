@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,7 @@ class EventController extends Controller
     public function index()
     {
         //$categories = Category::orderBy('title')->get();
-        $posts = Post::where('is_published',1)->paginate(8);
+        $posts = Post::where('is_published', 1)->paginate(8);
         return view(
             'pages.index',
             [
@@ -29,7 +30,7 @@ class EventController extends Controller
         return view(
             'pages.index',
             [
-                'posts' => $currentCategory->posts()->where('is_published',1)->paginate(8),
+                'posts' => $currentCategory->posts()->where('is_published', 1)->paginate(8),
                 //    'categories' => $categories,
             ]
 
@@ -38,12 +39,14 @@ class EventController extends Controller
 
     public function getPost($slug_category, $slug_post)
     {
+        $comments = Post::find(1)->comments;
         $post = Post::where('slug', $slug_post)->first();
 
         return view(
             'pages.show_post',
             [
-                'post' => $post
+                'post' => $post,
+                'comments' => $comments
             ]
         );
     }
