@@ -32,7 +32,7 @@
         <div class="container">
 
             <!-- Navbar brand -->
-            <a class="navbar-brand" href="#">AUEvent</a>
+            <a class="navbar-brand" href="/">AUEvent</a>
 
             <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
@@ -48,28 +48,26 @@
 
                     <!-- Link -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('getPostsByCategory','music')}}">Link</a>
+                        <a class="nav-link" href="{{route('getPostsByCategory','music')}}">Концерти</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('getPostsByCategory','music')}}">Театр</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('getPostsByCategory','music')}}">Фестивалі</a>
+                    </li>
+
 
                     <!-- Dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-mdb-toggle="dropdown" aria-expanded="false">
-                            Dropdown
+                            Інші
                         </a>
                         <!-- Dropdown menu -->
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
-                                <a class="dropdown-item" href="#">Action</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Another action</a>
-                            </li>
-                            <li>
-                                <hr class="dropdown-divider"/>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="#">Усі події</a>
                             </li>
                         </ul>
                     </li>
@@ -78,7 +76,27 @@
 
                 <!-- Icons -->
                 <ul class="navbar-nav d-flex flex-row me-1">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-mdb-toggle="dropdown" aria-expanded="false">
+                            Пошук
+                        </a>
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="input-group rounded">
+                                <input type="search" class="form-control rounded" placeholder="Пошук"
+                                       aria-label="Search"
+                                       aria-describedby="search-addon"/>
+                                <span class="input-group-text border-0" id="search-addon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </div>
 
+                        </ul>
+                    </li>
+                    <li class="nav-item me-3 me-lg-0" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                        <a class="nav-link" href="#"><i class="fas fa-map-marked-alt "></i></a>
+                    </li>
                     <li class="nav-item me-3 me-lg-0">
                         <a class="nav-link" href="#"><i class="fas fa-heart"></i></a>
                     </li>
@@ -103,10 +121,10 @@
                         @guest
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li>
-                                    <a class="dropdown-item" href="#">Увійти</a>
+                                    <a class="dropdown-item" href="{{route('login')}}">Увійти</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Зареєструватися</a>
+                                    <a class="dropdown-item" href="{{route('register')}}">Зареєструватися</a>
                                 </li>
                             </ul>
                         @endguest
@@ -114,14 +132,14 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 @role('admin')
                                 <li>
-                                    <a class="dropdown-item" href="#">Адмін панель</a>
+                                    <a class="dropdown-item" href="{{route('homeAdmin')}}">Адмін панель</a>
                                 </li>
                                 @endrole
                                 <li>
-                                    <a class="dropdown-item" href="#">Профіль</a>
+                                    <a class="dropdown-item" href="{{route('home')}}">Профіль</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="#">Вихід</a>
+                                    <a class="dropdown-item" href="{{route('logout')}}">Вихід</a>
                                 </li>
                             </ul>
                         @endauth

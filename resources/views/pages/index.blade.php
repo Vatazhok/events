@@ -55,10 +55,10 @@
                                         </th>
                                         <td class="pb-3 pt-2">{{$post->price}}</td>
                                     </tr>
+
                                     </tbody>
                                 </table>
-                                <a>{{$post->category['title']}}</a>
-                                <a href="{{route('getPost',[$post->category['slug'], $post->slug])}}" class="btn btn-primary">Read</a>
+
                             </div>
                         </div>
                     </div>
@@ -66,11 +66,44 @@
 
             </div>
         </div>
-        {{--        </section>--}}
-        <!--Section: Content-->
+    {{--        </section>--}}
+    <!--Section: Content-->
+        <!-- Modal -->
+        <div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+             aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+            <div class="modal-dialog  ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Вибір міста</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
 
-            <!-- Pagination -->
-        {{$posts->links('vendor.pagination.bootstrap-4')}}
-        <!--Main layout-->
+                        <ul class="">
+                            <div class="form-outline">
+                                <input type="text" id="form1" class="form-control" />
+                                <label class="form-label" for="form1">Назва міста</label>
+                            </div>
+                            <a href="#link" class="btn btn-primary m-1" role="button">Усі міста</a>
+                            <a href="#link" class="btn btn-primary m-1" role="button">Кременчук</a>
+                            <a href="#link" class="btn btn-primary m-1" role="button">Полтава</a>
+                            <a href="#link" class="btn btn-primary m-1" role="button">Київ</a>
+                            <a href="#link" class="btn btn-primary m-1" role="button">Черкаси</a>
+
+
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+                            Відмінити
+                        </button>
+                        <button type="button" class="btn btn-primary">Зберегти</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pagination -->
+    {{$posts->links('vendor.pagination.bootstrap-4')}}
+    <!--Main layout-->
     </main>
 @endsection
