@@ -41,6 +41,9 @@
                             <th>
                                 Дата створення
                             </th>
+                            <th>
+                                Опубліковано?
+                            </th>
                             <th style="width: 30%">
                             </th>
                         </tr>
@@ -60,12 +63,19 @@
                                 <td>
                                     {{ $post['created_at'] }}
                                 </td>
+                                <td>
+                                    @if($post['is_published'] ==1)
+                                        Так
+                                    @else
+                                        Ні
+                                    @endif
+                                </td>
 
                                 <td class="project-actions text-right">
                                     <a class="btn btn-info btn-sm" href="{{ route('post.edit', $post['id']) }}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
-                                        Редактировать
+                                        Редагувати
                                     </a>
                                     <form action="{{ route('post.destroy', $post['id']) }}" method="POST"
                                           style="display: inline-block">
@@ -74,7 +84,7 @@
                                         <button type="submit" class="btn btn-danger btn-sm delete-btn">
                                             <i class="fas fa-trash">
                                             </i>
-                                            Удалить
+                                            Видалити
                                         </button>
                                     </form>
                                 </td>

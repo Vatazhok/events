@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Добавить сатью</h1>
+                    <h1 class="m-0">Добавити пост</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
             @if (session('success'))
@@ -33,43 +33,43 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Назва</label>
                                     <input type="text" name="title" class="form-control" id="exampleInputEmail1"
-                                           placeholder="Введите название статьи" required>
+                                           placeholder="Уведіть назву заходу" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Назва(трансліт)</label>
                                     <input type="text" name="slug" class="form-control" id="exampleInputEmail1"
-                                           placeholder="Введите название статьи" required>
+                                           placeholder="Уведіть назву заходу" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Дата</label>
                                     <input type="text" name="date" class="form-control" id="exampleInputEmail1"
-                                           placeholder="Введите название статьи" required>
+                                           placeholder="Уведіть дату проведення заходу" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Час</label>
                                     <input type="text" name="time" class="form-control" id="exampleInputEmail1"
-                                           placeholder="Введите название статьи" required>
+                                           placeholder="ВУведіть час проведення заходу" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Місце проведення</label>
                                     <input type="text" name="venue" class="form-control" id="exampleInputEmail1"
-                                           placeholder="Введите название статьи" required>
+                                           placeholder="Уведіть місце проведення заходу" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Населений пункт, де проходитиме подія</label>
                                     <input type="text" name="settlement" class="form-control" id="exampleInputEmail1"
-                                           placeholder="Введите название статьи" required>
+                                           placeholder="Уведіть назву населеного пункту, де проходитиме подія" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Ціна</label>
                                     <input type="text" name="price" class="form-control" id="exampleInputEmail1"
-                                           placeholder="Введите название статьи" required>
+                                           placeholder="Уведіть ціну заходу" required>
                                 </div>
 
                                 <div class="form-group">
                                     <!-- select -->
                                     <div class="form-group">
-                                        <label>Выберите категорию</label>
+                                        <label>Оберіть категорію</label>
                                         <select name="category_id" class="form-control" required>
                                             @foreach ($categories as $category)
                                                 <option value="{{ $category['id'] }}">{{ $category['title'] }}</option>
@@ -83,11 +83,11 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="feature_image">Изображение статьи</label>
+                                    <label for="feature_image">Зображення посту</label>
                                     <img src="" alt="" class="img-uploaded" style="display: block; width: 300px">
                                     <input type="text" name="cover" class="form-control" id="feature_image"
                                            name="feature_image" value="" readonly>
-                                    <a href="" class="popup_selector" data-inputid="feature_image">Выбрать изображение</a>
+                                    <a href="" class="popup_selector" data-inputid="feature_image">Обрати зображення</a>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Публікація?</label>
