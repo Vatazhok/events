@@ -182,6 +182,16 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item ">
+                        <a href="{{route('comment.index')}}" class="nav-link ">
+                            <i class="nav-icon fas fa-align-left"></i>
+                            <p>
+                                Коментарі
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
