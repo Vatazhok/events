@@ -21,11 +21,12 @@ Route::get('/category/{slug_category}/{slug_post}', [\App\Http\Controllers\Event
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+//Route::put('/home', [App\Http\Controllers\HomeController::class, 'update'])->name('homeUpdate');
 
 
 Route::middleware(['role:admin'])->prefix('admin_panel')->group( function () {
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('homeAdmin');
+
 
     Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
     Route::resource('post', \App\Http\Controllers\Admin\PostController::class);

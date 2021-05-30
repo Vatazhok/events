@@ -18,17 +18,22 @@
 
 
 
-                                    <form class="form-inline">
+                                    <form class="form-inline" action="#" method="POST">
+                                        @csrf
+                                        @method('PUT')
+
                                         <label class="sr-only" for="inlineFormInputName2">Имя</label>
-                                        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="{{$user->name}}">
+                                        <input type="text" name="name" value="{{$user->name}}" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" >
 
                                         <label class="sr-only" for="inlineFormInputGroupUsername2">Имя пользователя</label>
                                         <div class="input-group mb-2 mr-sm-2">
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text">@</div>
                                             </div>
-                                            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="{{$user->email}}">
+                                            <input type="text" name="email" value="{{$user->email}}" class="form-control" id="inlineFormInputGroupUsername2" >
                                         </div>
+                                        <label class="sr-only" for="inlineFormInputName2">Пароль</label>
+                                        <input type="text" name="name" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Пароль">
 
 
 

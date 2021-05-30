@@ -38,4 +38,20 @@ class HomeController extends Controller
         );
 //        return view('dashboard.home');
     }
+
+//    public function update(Request $request, User $user)
+//    {
+//        $id =Auth::user()->id;
+//        $password = Auth::user()->password;
+//        $user->id = $id;
+//        $user->name = $request->name;
+//        $user->email = $request->email;
+//        $user->password = $password;
+//
+//
+//        $user->save();
+//
+//        return view('dashboard.home');
+//
+//    }
 }
