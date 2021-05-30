@@ -53,7 +53,7 @@
                                     {{ $comment['id'] }}
                                 </td>
                                 <td>
-                                    {{ $comment['author'] }}
+                                    {{ $comment->user['name'] }}
                                 </td>
                                 <td>
                                     {{ $comment['message'] }}

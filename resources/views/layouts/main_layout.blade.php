@@ -139,7 +139,16 @@
                                     <a class="dropdown-item" href="{{route('home')}}">Профіль</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="{{route('logout')}}">Вихід</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Вихід') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+{{--                                    <a class="dropdown-item" href="{{route('logout')}}">Вихід</a>--}}
                                 </li>
                             </ul>
                         @endauth
