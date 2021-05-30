@@ -60,7 +60,11 @@ class PostController extends Controller
         $post->venue = $request->venue;
         $post->price = $request->price;
         $post->settlement = $request->settlement;
-        $post->is_published = $request->is_published;
+        if ($request->is_published == 1) {
+            $post->is_published = $request->is_published;
+        } else {
+            $post->is_published = 0;
+        }
         $post->save();
 
         return redirect()->back()->withSuccess('Пост створено');
@@ -114,7 +118,12 @@ class PostController extends Controller
         $post->venue = $request->venue;
         $post->price = $request->price;
         $post->settlement = $request->settlement;
-        $post->is_published = $request->is_published;
+
+        if ($request->is_published == 1) {
+            $post->is_published = $request->is_published;
+        } else {
+            $post->is_published = 0;
+        }
         $post->save();
 
         return redirect()->back()->withSuccess('Пост оновлено');

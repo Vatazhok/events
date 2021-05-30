@@ -18,14 +18,14 @@ class CommentController extends Controller
     public function index()
     {
 //        $comments = User::find(1)->comments;
-        $users = User::all();
+//        $users = User::all();
 
        $comments = Comment::orderBy('id')->get();
         return view(
             'admin.comment.index',
             [
                 'comments' => $comments,
-                'users' => $users,
+//                'users' => $users,
             ]
         );
     }
@@ -93,6 +93,7 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        $comment->delete();
+        return redirect()->back()->withSuccess('Коментар успішно видалено');
     }
 }

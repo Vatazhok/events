@@ -184,10 +184,10 @@
                     </li>
                     <li class="nav-item ">
                         <a href="{{route('comment.index')}}" class="nav-link ">
-                            <i class="nav-icon fas fa-align-left"></i>
+                            <i class="nav-icon far fa-comments"></i>
                             <p>
                                 Коментарі
-                                <i class="right fas fa-angle-left"></i>
+
                             </p>
                         </a>
 

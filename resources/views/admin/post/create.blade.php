@@ -42,12 +42,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Дата</label>
-                                    <input type="text" name="date" class="form-control" id="exampleInputEmail1"
+                                    <input type="date" name="date" class="form-control" id="exampleInputEmail1"
                                            placeholder="Уведіть дату проведення заходу" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Час</label>
-                                    <input type="text" name="time" class="form-control" id="exampleInputEmail1"
+                                    <input type="time" name="time" class="form-control" id="exampleInputEmail1"
                                            placeholder="ВУведіть час проведення заходу" required>
                                 </div>
                                 <div class="form-group">
@@ -90,9 +90,13 @@
                                     <a href="" class="popup_selector" data-inputid="feature_image">Обрати зображення</a>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Публікація?</label>
-                                    <input type="text" name="is_published" class="form-control" id="exampleInputEmail1"
-                                           placeholder="Введите название статьи" required>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" value="2" name="is_published" class="custom-control-input" id="customSwitch1">
+                                        <label class="custom-control-label"  for="customSwitch1">Опублікувати?</label>
+                                    </div>
+{{--                                    <label for="exampleInputEmail1">Публікація?</label>--}}
+{{--                                    <input type="text" name="is_published" class="form-control" id="exampleInputEmail1"--}}
+{{--                                           placeholder="Введите название статьи" required>--}}
                                 </div>
                             </div>
                             <!-- /.card-body -->

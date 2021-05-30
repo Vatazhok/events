@@ -249,5 +249,12 @@
     type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
 ></script>
+<!--RE:plain-->
+<script>
+    window.replainSettings = { id: 'a3a2a98b-27ae-4cae-9b84-60e96f9c3e93' };
+    (function(u){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src=u;
+        var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+    })('https://widget.replain.cc/dist/client.js');
+</script>
 </body>
 </html>

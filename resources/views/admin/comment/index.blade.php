@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Всі пости</h1>
+                    <h1 class="m-0">Всі коментарі</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
             @if (session('success'))
@@ -33,13 +33,16 @@
                                 ID
                             </th>
                             <th>
-                                Назва
+                                Ім'я користувача
                             </th>
                             <th>
-                                Категорія
+                                Пост
                             </th>
                             <th>
-                                Дата створення
+                                Коментар
+                            </th>
+                            <th>
+                                E-mail
                             </th>
 
                             <th style="width: 30%">
@@ -56,6 +59,10 @@
                                     {{ $comment->user['name'] }}
                                 </td>
                                 <td>
+                                    <a href="{{route('getPost',[$comment->post->category['slug'], $comment->post['slug']])}}" class="badge badge-info">{{ $comment->post['title'] }}</a>
+{{--                                    {{ $comment->post['slug'] }}--}}
+                                </td>
+                                <td>
                                     {{ $comment['message'] }}
                                 </td>
                                 <td>
@@ -66,12 +73,8 @@
 {{--                                @endforeach--}}
 
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-info btn-sm" href="{{ route('post.edit', $comment['id']) }}">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Редагувати
-                                    </a>
-                                    <form action="{{ route('post.destroy', $comment['id']) }}" method="POST"
+
+                                    <form action="{{ route('comment.destroy', $comment['id']) }}" method="POST"
                                           style="display: inline-block">
                                         @csrf
                                         @method('DELETE')

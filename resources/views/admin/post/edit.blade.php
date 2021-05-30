@@ -43,12 +43,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Дата</label>
-                                    <input type="text" value="{{$post->date}}" name="date" class="form-control" id="exampleInputEmail1"
+                                    <input type="date" value="{{$post->date}}" name="date" class="form-control" id="exampleInputEmail1"
                                            placeholder="Введите название статьи" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Час</label>
-                                    <input type="text" value="{{$post->time}}" name="time" class="form-control" id="exampleInputEmail1"
+                                    <input type="time" value="{{$post->time}}" name="time" class="form-control" id="exampleInputEmail1"
                                            placeholder="Введите название статьи" required>
                                 </div>
                                 <div class="form-group">
@@ -91,9 +91,13 @@
                                     <a href="" class="popup_selector" data-inputid="feature_image">Выбрать изображение</a>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Публікація?</label>
-                                    <input type="text" value="{{$post->is_published}}" name="is_published" class="form-control" id="exampleInputEmail1"
-                                           placeholder="Введите название статьи" required>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" value="1" name="is_published" class="custom-control-input" id="customSwitch1" @if($post->is_published==1) checked @endif>
+                                        <label class="custom-control-label"  for="customSwitch1">Опублікувати?</label>
+                                    </div>
+{{--                                    <label for="exampleInputEmail1">Публікація?</label>--}}
+{{--                                    <input type="text" value="{{$post->is_published}}" name="is_published" class="form-control" id="exampleInputEmail1"--}}
+{{--                                           placeholder="Введите название статьи" required>--}}
                                 </div>
                             </div>
                             <!-- /.card-body -->
