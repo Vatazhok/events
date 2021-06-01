@@ -1,6 +1,6 @@
 @extends('layouts.admin_layout')
 
-@section('title', 'Редактирование категории')
+@section('title', 'Редагування категорії')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Редактирование категории: {{ $category['title'] }}</h1>
+                    <h1 class="m-0">Редагування категорії: {{ $category['title'] }}</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
             @if (session('success'))
@@ -33,12 +33,12 @@
                             @method('PUT')
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Название</label>
+                                    <label for="exampleInputEmail1">Назва категорії</label>
                                     <input type="text" value="{{ $category['title'] }}" name="title" class="form-control"
                                            id="exampleInputEmail1" placeholder="Введите название категории" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Название</label>
+                                    <label for="exampleInputEmail1">Назва категорії (транслітом)</label>
                                     <input type="text" value="{{ $category['slug'] }}" name="slug" class="form-control"
                                            id="exampleInputEmail1" placeholder="Введите название категории" required>
                                 </div>
@@ -46,7 +46,7 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Обновить</button>
+                                <button type="submit" class="btn btn-primary">Оновити</button>
                             </div>
                         </form>
                     </div>

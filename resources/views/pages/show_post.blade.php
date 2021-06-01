@@ -120,7 +120,27 @@
                     <div class="collapse mt-3" id="collapseExample_1">
 
                         @foreach($post->comments as $comment)
-                            {{$comment->message}}
+                            <div class="card border border-primary shadow-0 m-1">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{$comment->user['name']}}</h5>
+                                    <p class="card-text">
+                                        {{$comment->message}}
+                                    </p>
+
+
+                                </div>
+                            </div>
+
+{{--                            <div class=" m-2">--}}
+{{--                                <div class="">--}}
+{{--                                    {{$comment->user['name']}}--}}
+{{--                                </div>--}}
+{{--                                <div class="">--}}
+{{--                                    {{$comment->message}}--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+
+
                         @endforeach
                     </div>
                 </div>

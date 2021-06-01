@@ -84,11 +84,11 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="feature_image">Изображение статьи</label>
+                                    <label for="feature_image">Зображення посту</label>
                                     <img src="{{$post->cover}}" alt="" class="img-uploaded" style="display: block; width: 300px">
                                     <input type="text" value="{{$post->cover}}" name="cover" class="form-control" id="feature_image"
                                            name="feature_image" value="" readonly>
-                                    <a href="" class="popup_selector" data-inputid="feature_image">Выбрать изображение</a>
+                                    <a href="" class="popup_selector" data-inputid="feature_image">Обрати зображення</a>
                                 </div>
                                 <div class="form-group">
                                     <div class="custom-control custom-switch">

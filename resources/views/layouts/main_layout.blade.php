@@ -32,7 +32,7 @@
         <div class="container">
 
             <!-- Navbar brand -->
-            <a class="navbar-brand" href="/">AUEvent</a>
+            <a class="navbar-brand" href="/">AUEvents</a>
 
             <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"

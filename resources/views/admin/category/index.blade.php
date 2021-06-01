@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Все категории</h1>
+                    <h1 class="m-0">Всі категорії</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
             @if (session('success'))
@@ -33,7 +33,7 @@
                                 ID
                             </th>
                             <th>
-                                Название
+                                Назва категорії
                             </th>
                             <th style="width: 30%">
                             </th>
@@ -53,7 +53,7 @@
                                     <a class="btn btn-info btn-sm" href="{{ route('category.edit', $category['id']) }}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
-                                        Редактировать
+                                        Редагувати
                                     </a>
                                     <form action="{{ route('category.destroy', $category['id']) }}" method="POST"
                                           style="display: inline-block">
@@ -62,7 +62,7 @@
                                         <button type="submit" class="btn btn-danger btn-sm delete-btn">
                                             <i class="fas fa-trash">
                                             </i>
-                                            Удалить
+                                            Видалити
                                         </button>
                                     </form>
                                 </td>

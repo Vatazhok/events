@@ -32,20 +32,20 @@
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Название</label>
+                                    <label for="exampleInputEmail1">Назва категорії</label>
                                     <input type="text" name="title" class="form-control" id="exampleInputEmail1"
-                                           placeholder="Введите название категории" required>
+                                           placeholder="Уведіть назву категорії " required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Трансліт</label>
+                                    <label for="exampleInputEmail1">Назва категорії (транслітом)</label>
                                     <input type="text" name="slug" class="form-control" id="exampleInputEmail1"
-                                           placeholder="Введите название категории" required>
+                                           placeholder="Уведіть назву категорії (транслітом)" required>
                                 </div>
                             </div>
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Добавить</button>
+                                <button type="submit" class="btn btn-primary">Добавити</button>
                             </div>
                         </form>
                     </div>
