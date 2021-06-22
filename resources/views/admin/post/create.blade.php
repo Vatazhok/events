@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="custom-control custom-switch">
-                                        <input type="checkbox" value="2" name="is_published" class="custom-control-input" id="customSwitch1">
+                                        <input type="checkbox" value="1" name="is_published" class="custom-control-input" id="customSwitch1" @if($post->is_published==1) checked @endif>>
                                         <label class="custom-control-label"  for="customSwitch1">Опублікувати?</label>
                                     </div>
 {{--                                    <label for="exampleInputEmail1">Публікація?</label>--}}

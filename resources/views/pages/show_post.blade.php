@@ -12,7 +12,7 @@
                 <div class="col-xl-4  mb-4">
 
                     <div>
-                        <img src="{{$post->cover}}" class="img-fluid "/>
+                        <img src="/{{$post->cover}}" class="img-fluid "/>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-center pb-1">{{$post->title}}</h5>

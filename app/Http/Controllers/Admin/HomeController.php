@@ -13,10 +13,11 @@ class HomeController extends Controller
 {
     public function index(){
 
-        $users_count=User::all()->count();
-        $posts_count=Post::all()->count();
-        $categories_count=Category::all()->count();
-        $comments_count=Comment::all()->count();
+        $users_count=User::all('id')->count();
+        $posts_count=Post::all('id')->count();
+        $categories_count=Category::all('id')->count();
+        $comments_count=Comment::all('id')->count();
+
         return view('admin.home.index',[
             'posts_count'=> $posts_count,
             'categories_count'=> $categories_count,
